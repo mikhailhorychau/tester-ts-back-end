@@ -1,5 +1,12 @@
-import mongoose from 'mongoose';
-import IUser from './user.interface';
+import mongoose, { Document } from 'mongoose';
+import Entity from '../interfaces/Entity';
+
+export interface IUser extends Entity {
+    email: string;
+    password: string;
+    firstName: string;
+    secondName: string;
+}
 
 const userSchema = new mongoose.Schema({
     email: {
@@ -15,11 +22,12 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    lastName: {
+    secondName: {
         type: String,
         required: true
     }
-});
+})
 
-const User = mongoose.model<IUser>('User', userSchema);
+const User = mongoose.model<IUser & Document>('User', userSchema);
+
 export default User;

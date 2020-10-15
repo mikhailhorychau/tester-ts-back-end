@@ -6,12 +6,12 @@ export default class UserController implements Controller {
     readonly port: number;
     readonly path: string;
     readonly router: Router;
-    readonly service: Service;
+    readonly services: Service[];
 
-    constructor(port: number, path: string, service: Service) {
+    constructor(port: number, path: string, services: Service[]) {
         this.port = port;
         this.path = path;
-        this.service = service;
+        this.services = services;
         this.router = Router();
     }
 

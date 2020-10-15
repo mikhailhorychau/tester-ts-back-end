@@ -1,10 +1,8 @@
 import PropertyNotFoundException from "../exceptions/PropertyNotFoundException";
 import UserNotFoundException from "../exceptions/UserNotFoundException";
-import Service from "../interfaces/Service";
-import IUser from "./user.interface";
-import User from "./user.model";
+import User, {IUser} from "./user.model";
 
-export default class UserService implements Service {
+export default class UserStorage {
 
     public findAllUsers = async () => await User.find();
 
