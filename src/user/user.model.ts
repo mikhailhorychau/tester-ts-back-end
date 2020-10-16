@@ -2,6 +2,7 @@ import mongoose, { Document } from 'mongoose';
 import Entity from '../interfaces/Entity';
 
 export interface IUser extends Entity {
+    _id: string;
     email: string;
     password: string;
     firstName: string;
